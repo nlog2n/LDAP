@@ -1,0 +1,42 @@
+Powershell usage:
+
+Powershell - Execution of Scripts Disabled
+
+
+Simply, you can bypass this policy by adding -ExecutionPolicy ByPass when running PowerShell:
+
+powershell -ExecutionPolicy ByPass -File script.ps1
+
+
+Or
+
+1. open start->accessories -> windows powershell ISE, 
+   right click x86 version and choose "Run as administrator".
+2. get-executionpolicy
+  restricted
+3. set-executionpolicy unrestricted
+
+4. .\GenericSearch.ps1  ( which is an LDAP filter tool)
+
+5. set-executionpolicy restricted
+
+
+
+Help:
+
+see get-help set-executionpolicy for the possible settings, 
+then set it as appropriate for your environment.
+
+
+Set-ExecutionPolicy Unrestricted
+Will allow unsigned powershell scripts to run.
+
+Set-ExecutionPolicy Restricted
+Will not allow unsigned powershell scripts to run.
+
+Set-ExecutionPolicy RemoteSigned
+Will allow only remotely signed powershell scripts to run.
+
+
+Running Windows PowerShell Scripts 
+http://technet.microsoft.com/en-us/library/ee176949.aspx
